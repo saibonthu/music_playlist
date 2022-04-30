@@ -33,7 +33,7 @@ def songs_upload():
 
     if form.validate_on_submit():
         log = logging.getLogger("CSV_upload")
-        log.info('csv upload successful!')
+        log.info('successfully uploaded CSV!')
         filename = secure_filename(form.file.data.filename)
         filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
         form.file.data.save(filepath)
