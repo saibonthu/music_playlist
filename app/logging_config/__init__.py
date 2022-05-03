@@ -28,10 +28,7 @@ def after_request_logging(response):
         return response
     elif request.path.startswith('/bootstrap'):
         return response
-    #now = datetime.now()
-    #duration = round(now - g.start, 2)
-    #dt = datetime.fromtimestamp(now)
-    #timestamp = rfc3339(dt, utc=True)
+
 
     ip = request.headers.get('X-Forwarded-For', request.remote_addr)
     host = request.host.split(':', 1)[0]
@@ -41,8 +38,7 @@ def after_request_logging(response):
         ('method', request.method),
         ('path', request.path),
         ('status', response.status_code),
-        #('duration', duration),
-        #('time', timestamp),
+
         ('ip', ip),
         ('host', host),
         ('params', args)

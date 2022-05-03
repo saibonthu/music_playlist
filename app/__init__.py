@@ -70,4 +70,4 @@ def user_loader(user_id):
     except:
         return None
         log = logging.getLogger("errors")
-        log.info("Error Occurred")
+        log.info("got error")
